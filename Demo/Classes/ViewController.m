@@ -85,7 +85,11 @@ static float progress = 0.0f;
 }
 
 - (void)showSuccessWithStatus {
-	[SVProgressHUD showSuccessWithStatus:@"Great Success!"];
+    //[SVProgressHUD showSuccessWithStatus:@"Great Success!"];
+    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    UIImage *image = [UIImage imageNamed:@"SVProgressHUD.bundle/success.png"];
+    [SVProgressHUD showImage:image status:@"Not So Great Success!"];
 }
 
 - (void)showErrorWithStatus {
